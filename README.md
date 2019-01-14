@@ -15,3 +15,9 @@ brew doctor
 brew install ansible
 ansible --version
 ```
+
+### Run Ansible
+
+```
+ansible-playbook -i hosts localhost.yaml
+```
