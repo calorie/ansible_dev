@@ -14,7 +14,7 @@
       - { name: docker }
       - { name: docker-machine }
       - { name: fontforge }
-      - { name: ggrep }
+      - { name: grep }
       - { name: htop }
       - { name: homebrew/dupes/grep }
       - { name: icu4c }
