@@ -12,7 +12,6 @@ homebrew_packages:
   - { name: fontforge }
   - { name: grep }
   - { name: htop }
-  - { name: homebrew/dupes/grep }
   - { name: icu4c }
   - { name: imagemagick }
   - { name: libtool }
