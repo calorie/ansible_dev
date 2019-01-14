@@ -1,2 +1,66 @@
 ---
-# defaults file for package
+homebrew_taps:
+  - caskroom/cask
+
+homebrew_packages:
+  - { name: automake }
+  - { name: cmake }
+  - { name: ctags }
+  - { name: direnv }
+  - { name: docker }
+  - { name: docker-machine }
+  - { name: fontforge }
+  - { name: grep }
+  - { name: htop }
+  - { name: homebrew/dupes/grep }
+  - { name: icu4c }
+  - { name: imagemagick }
+  - { name: libtool }
+  - { name: lua }
+  - { name: luajit }
+  - { name: mas }
+  - { name: memcached }
+  - { name: mercurial }
+  - { name: mysql }
+  - { name: neovim }
+  - { name: nkf }
+  - { name: openssl }
+  - { name: peco }
+  - { name: pstree }
+  - { name: python }
+  - { name: python3 }
+  - { name: reattach-to-user-namespace }
+  - { name: rmtrash }
+  - { name: ssh-copy-id }
+  - { name: the_silver_searcher }
+  - { name: tig }
+  - { name: tmux }
+  - { name: wget }
+  - { name: zlib }
+
+homebrew_cask_packages:
+  - { name: alfred }
+  - { name: appcleaner }
+  - { name: bettertouchtool }
+  - { name: caffeine }
+  - { name: dropbox }
+  - { name: evernote }
+  - { name: firefox }
+  - { name: flux }
+  - { name: gyazo }
+  - { name: google-chrome }
+  - { name: google-japanese-ime }
+  - { name: iterm2 }
+  - { name: keyboardcleantool }
+  - { name: macid }
+  - { name: skype }
+  - { name: slack }
+  - { name: the-unarchiver }
+  - { name: vagrant }
+  - { name: virtualbox }
+  - { name: vlc }
+  - { name: xquartz }
+
+mas_packages:
+  - { name: 1Password, id: 443987910 }
+  - { name: Xcode, id: 497799835 }
