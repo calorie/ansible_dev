@@ -1,6 +1,7 @@
 ---
 homebrew_taps:
   - caskroom/cask
+  - sanemat/font
 
 homebrew_packages:
   - { name: automake }
@@ -28,7 +29,9 @@ homebrew_packages:
   - { name: pstree }
   - { name: python }
   - { name: python3 }
+  - { name: q }
   - { name: reattach-to-user-namespace }
+  - { name: ricty }
   - { name: rmtrash }
   - { name: ssh-copy-id }
   - { name: the_silver_searcher }
@@ -50,6 +53,7 @@ homebrew_cask_packages:
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
+  - { name: karabiner-elements }
   - { name: keyboardcleantool }
   - { name: macid }
   - { name: skype }
