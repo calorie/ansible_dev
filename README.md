@@ -19,5 +19,5 @@ ansible --version
 ### Run Ansible
 
 ```
-ansible-playbook -i hosts localhost.yml
+ansible-playbook -i hosts/local localhost.yml
 ```

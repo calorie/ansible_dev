@@ -1,0 +1,14 @@
+---
+- block:
+  - name: Create karabiner config directory
+    file:
+      path: ~/.config/karabiner
+      state: directory
+      owner: '{{ owner }}'
+      group: '{{ group }}'
+      mode: 655
+
+  - name: Import karabiner.json
+    get_url:
+      url: '{{ karabiner.config_repo }}'
+      dest: ~/.config/karabiner/karabiner.json
