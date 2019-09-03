@@ -1,4 +1,8 @@
 ---
 - git:
   repo: git@github.com:calorie/dotfiles.git
-  dest: "/Users/{{ owner }}/dotfiles"
+  dest: ~/dotfiles
+
+- name: Setup dotfiles
+  chdir: ~/dotfiles
+  shell: ./script/setup
