@@ -3,3 +3,12 @@ rbenv_packages:
   - { name: rbenv }
   - { name: ruby-build }
 ruby_version: '2.6.4'
+default_gems:
+  - { name: bundler }
+  - { name: nvvm }
+  - { name: pry-byebug }
+  - { name: rake }
+  - { name: refe2 }
+  - { name: rubocop }
+  - { name: rubygems-update }
+  - { name: tmuxinator }

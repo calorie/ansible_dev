@@ -24,3 +24,10 @@
 - name: Set default ruby version
   shell: rbenv global {{ ruby_version }}
   when: is_ruby_version is failed
+
+- name: Install  gems
+  gem:
+    name: '{{ item.name }}'
+    user_install: no
+    executable: ~/.rbenv/shims/gem
+  with_items: '{{ default_gems }}'
