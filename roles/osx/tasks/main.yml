@@ -81,12 +81,12 @@
   shell: defaults read com.apple.dock
   register: apple_defaults
 
-- name: "Delete from the dock"
+- name: Delete from the dock
   vars:
     app_name: "Google Chrome"
   shell: defaults write com.apple.dock persistent-apps -array
   when: apple_defaults.stdout.find(app_name) == -1
 
-- name: disable the sound effects on boot
+- name: Disable the sound effects on boot
   command: /usr/sbin/nvram SystemAudioVolume=" "
   sudo: yes
