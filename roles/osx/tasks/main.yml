@@ -1,0 +1,92 @@
+---
+- name: Set up InitialKeyRepeat
+  osx_defaults:
+    key: InitialKeyRepeat
+    type: int
+    value: 10
+    state: present
+
+- name: Set up KeyRepeat
+  osx_defaults:
+    key: KeyRepeat
+    type: int
+    value: 3
+    state: present
+
+- name: Dock autohide
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    state: present
+
+- name: Show battery percent
+  osx_defaults:
+    domain: com.apple.menuextra.battery
+    key: ShowPercent
+    type: string
+    value: YES
+    state: present
+
+- name: Set up TrackpadCornerSecondaryClick
+  osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    key: TrackpadCornerSecondaryClick
+    type: int
+    value: 2
+    state: present
+
+- name: Set up Clicking
+  osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    key: Clicking
+    type: int
+    value: 1
+    state: present
+
+- name: Disable show recents
+  osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    state: present
+
+- name: Show all files
+  osx_defaults:
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+    state: present
+
+- name: Show path bar
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: true
+    state: present
+
+- name: Change capture location
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: ~/Downloads
+    state: present
+
+- name: Read defaults to know what to delete from the dock
+  shell: defaults read com.apple.dock
+  register: apple_defaults
+
+- name: "Delete from the dock"
+  vars:
+    app_name: "Google Chrome"
+  shell: defaults write com.apple.dock persistent-apps -array
+  when: apple_defaults.stdout.find(app_name) == -1
+
+- name: disable the sound effects on boot
+  command: /usr/sbin/nvram SystemAudioVolume=" "
+  sudo: yes
