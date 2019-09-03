@@ -26,3 +26,11 @@
 - name: Change default shell
   shell: chsh -s /usr/local/bin/zsh
   when: is_zsh_default is failed
+
+- pip:
+    name: neovim
+
+- name: Install NeoVim
+  shell: nvvm install --use latest
+  args:
+    creates: ~/.nvvm
