@@ -56,7 +56,6 @@ homebrew_cask_packages:
   - { name: slack }
   - { name: the-unarchiver }
   - { name: vagrant }
-  - { name: virtualbox }
   - { name: vlc }
   - { name: xquartz }
 
