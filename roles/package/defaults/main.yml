@@ -63,4 +63,6 @@ homebrew_cask_packages:
 
 mas_packages:
   - { name: 1Password, id: 443987910 }
+  - { name: Kindle, id: 405399194 }
+  - { name: BetterSnapTool, id: 417375580 }
   - { name: Xcode, id: 497799835 }
