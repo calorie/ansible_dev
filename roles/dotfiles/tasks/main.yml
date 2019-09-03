@@ -10,3 +10,19 @@
   args:
     chdir: ~/dotfiles
     creates: ~/.zshrc
+
+- name: Add zsh
+  lineinfile:
+    dest: /etc/shells
+    line: /usr/local/bin/zsh
+  become: yes
+
+- name: Check default shell
+  shell: echo $SHELL | grep /usr/local/bin/zsh
+  register: is_zsh_default
+  changed_when: False
+  ignore_errors: yes
+
+- name: Change default shell
+  shell: chsh -s /usr/local/bin/zsh
+  when: is_zsh_default is failed

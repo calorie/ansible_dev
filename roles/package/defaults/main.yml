@@ -37,8 +37,10 @@ homebrew_packages:
   - { name: the_silver_searcher }
   - { name: tig }
   - { name: tmux }
+  - { name: vim }
   - { name: wget }
   - { name: zlib }
+  - { name: zsh }
 
 homebrew_cask_packages:
   - { name: alfred }

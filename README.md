@@ -19,5 +19,5 @@ ansible --version
 ### Run Ansible
 
 ```
-ansible-playbook -i hosts/local localhost.yml
+ansible-playbook --ask-become-pass -i hosts/local localhost.yml
 ```
