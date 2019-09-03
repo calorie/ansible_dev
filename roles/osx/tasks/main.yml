@@ -87,6 +87,16 @@
   shell: defaults write com.apple.dock persistent-apps -array
   when: apple_defaults.stdout.find(app_name) == -1
 
+- name: Check PresentationModePerApp
+  shell: defaults read com.apple.touchbar.agent PresentationModePerApp | grep iterm2
+  register: is_setted_touch_bar_on_iterm2
+  changed_when: False
+  ignore_errors: yes
+
+- name: Set touch bar on iTerm2
+  shell: defaults write com.apple.touchbar.agent PresentationModePerApp -dict-add com.googlecode.iterm2 'functionKeys'
+  when: is_setted_touch_bar_on_iterm2 is failed
+
 - name: Disable the sound effects on boot
   command: /usr/sbin/nvram SystemAudioVolume=" "
-  sudo: yes
+  become: yes
