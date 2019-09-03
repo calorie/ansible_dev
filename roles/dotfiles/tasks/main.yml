@@ -1,0 +1,4 @@
+---
+- git:
+  repo: git@github.com:calorie/dotfiles.git
+  dest: "/Users/{{ owner }}/dotfiles"

@@ -4,4 +4,5 @@
   become: no
   roles:
     - { role: package, tags: [ package ] }
+    - { role: dotfiles, tags: [ dotfiles ] }
     - { role: karabiner, tags: [ karabiner ] }
