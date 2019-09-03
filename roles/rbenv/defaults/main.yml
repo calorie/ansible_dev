@@ -12,3 +12,7 @@ default_gems:
   - { name: rubocop }
   - { name: rubygems-update }
   - { name: tmuxinator }
+nokogiri_deps:
+  - { name: libiconv }
+  - { name: libxml2 }
+  - { name: libxslt }

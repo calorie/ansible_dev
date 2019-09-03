@@ -38,3 +38,13 @@
   args:
     creates: ~/.bitclust
   when: is_ruby_version is failed
+
+- name: Install nokogiri deps
+  homebrew:
+    name: '{{ item.name }}'
+    state: '{{ item.state | default("present") }}'
+  with_items: '{{ nokogiri_deps }}'
+
+- name: Config nokogiri
+  shell: bundle config --global build.nokogiri --use-system-libraries --with-iconv-dir=/usr/local/opt/libiconv --with-xml2-dir=/usr/local/opt/libxml2 --with-xslt-dir=/usr/local/opt/libxslt
+  when: is_ruby_version is failed
