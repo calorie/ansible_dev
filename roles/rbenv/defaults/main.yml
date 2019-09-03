@@ -1,0 +1,5 @@
+---
+rbenv_packages:
+  - { name: rbenv }
+  - { name: ruby-build }
+ruby_version: '2.6.4'

@@ -1,0 +1,26 @@
+---
+- name: homebrew rbenv packages install
+  homebrew:
+    name: '{{ item.name }}'
+    state: '{{ item.state | default("present") }}'
+  with_items: '{{ rbenv_packages }}'
+
+- name: Check installed ruby version
+  shell: ~/.rbenv/bin/rbenv versions | grep {{ ruby_version }}
+  register: has_ruby_version
+  changed_when: False
+  ignore_errors: yes
+
+- name: Check ruby version
+  shell: ~/.rbenv/bin/rbenv version | grep {{ ruby_version }}
+  register: is_ruby_version
+  changed_when: False
+  ignore_errors: yes
+
+- name: Install Ruby
+  command: ~/.rbenv/bin/rbenv install {{ ruby_version }}
+  when: has_ruby_version is failed
+
+- name: Set default ruby version
+  shell: ~/.rbenv/bin/rbenv global {{ ruby_version }}
+  when: is_ruby_version is failed
