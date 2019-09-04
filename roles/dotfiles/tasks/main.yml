@@ -30,6 +30,9 @@
 - pip:
     name: neovim
 
+- pip:
+    name: pynvim
+
 - name: Install NeoVim
   shell: nvvm install --use latest
   args:

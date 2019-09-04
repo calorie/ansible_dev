@@ -1,7 +1,6 @@
-- hosts: localhost
+- hosts: all
   connection: local
   gather_facts: no
-  become: no
   roles:
     - { role: package, tags: [ package ] }
     - { role: osx, tags: [ osx ] }

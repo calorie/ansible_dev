@@ -9,19 +9,22 @@
     state: present
   with_items: '{{ homebrew_taps }}'
 
+- name: Allow apps to be downloaded from anywhere
+  shell: spctl --master-disable
+  become: yes
+
 - name: Install homebrew cask packages
   homebrew_cask:
     name: "{{ item.name }}"
-    state: '{{ item.state | default("present") }}'
+    state: present
   environment:
     HOMEBREW_CASK_OPTS: '--appdir=/Applications'
   with_items: '{{ homebrew_cask_packages }}'
-  ignore_errors: true
 
 - name: Install homebrew packages
   homebrew:
     name: '{{ item.name }}'
-    state: '{{ item.state | default("present") }}'
+    state: present
   with_items: '{{ homebrew_packages }}'
 
 - name: Install mas (App Store) packages
@@ -29,3 +32,15 @@
   with_items: "{{ mas_packages }}"
   register: ret
   changed_when: '"already installed" not in ret.stdout'
+
+- name: Install imgcat
+  get_url:
+    url: https://iterm2.com/utilities/imgcat
+    dest: /usr/local/bin/imgcat
+    owner: '{{ owner }}'
+    group: '{{ group }}'
+    mode: a+x
+
+- name: Don't Allow apps to be downloaded from anywhere
+  shell: spctl --master-enable
+  become: yes

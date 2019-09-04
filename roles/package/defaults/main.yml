@@ -1,20 +1,25 @@
 ---
 homebrew_taps:
   - caskroom/cask
+  - homebrew/services
   - sanemat/font
 
 homebrew_packages:
   - { name: automake }
+  - { name: boost-python }
   - { name: cmake }
   - { name: ctags }
   - { name: direnv }
   - { name: docker }
   - { name: docker-machine }
   - { name: fontforge }
+  - { name: fzf }
+  - { name: go }
   - { name: grep }
   - { name: htop }
   - { name: icu4c }
   - { name: imagemagick }
+  - { name: jq }
   - { name: libtool }
   - { name: lua }
   - { name: luajit }
@@ -23,6 +28,7 @@ homebrew_packages:
   - { name: mercurial }
   - { name: mysql }
   - { name: neovim }
+  - { name: nginx }
   - { name: nkf }
   - { name: openssl }
   - { name: peco }
@@ -38,6 +44,7 @@ homebrew_packages:
   - { name: tig }
   - { name: tmux }
   - { name: vim }
+  - { name: w3m }
   - { name: wget }
   - { name: zlib }
   - { name: zsh }
@@ -58,6 +65,7 @@ homebrew_cask_packages:
   - { name: slack }
   - { name: the-unarchiver }
   - { name: vagrant }
+  - { name: virtualbox }
   - { name: vlc }
   - { name: xquartz }
 
