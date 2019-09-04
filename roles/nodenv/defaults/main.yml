@@ -1,0 +1,4 @@
+---
+node_version: 10.16.3
+npm_modules:
+  - { name: grunt-cli }

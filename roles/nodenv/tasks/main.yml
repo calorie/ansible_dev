@@ -1,0 +1,57 @@
+---
+- name: Clone nodenv
+  git:
+    repo: https://github.com/nodenv/nodenv.git
+    dest: ~/.nodenv
+
+- name: Create nodenv plugins directory
+  file:
+    path: ~/.nodenv/plugins
+    state: directory
+    owner: '{{ owner }}'
+    group: '{{ group }}'
+    mode: 0755
+    recurse: yes
+
+- name: Clone node-build
+  git:
+    repo: https://github.com/nodenv/node-build.git
+    dest: ~/.nodenv/plugins/node-build
+
+- name: Write nodenv settings
+  lineinfile:
+    dest: ~/.bash_profile
+    line: '{{ item.line }}'
+    create: yes
+    owner: '{{ owner }}'
+    group: '{{ group }}'
+    mode: 0644
+  with_items:
+    - { line: 'export PATH="$HOME/.nodenv/bin:$PATH"' }
+    - { line: 'eval "$(nodenv init -)"' }
+
+- name: Check installed node version
+  shell: ~/.nodenv/bin/nodenv versions | grep {{ node_version }}
+  register: has_node_version
+  changed_when: False
+  ignore_errors: yes
+
+- name: Check node version
+  shell: ~/.nodenv/bin/nodenv version | grep {{ node_version }}
+  register: is_node_version
+  changed_when: False
+  ignore_errors: yes
+
+- name: Install Node
+  shell: ~/.nodenv/bin/nodenv install {{ node_version }}
+  when: has_node_version is failed
+
+- name: Set default node version
+  shell: ~/.nodenv/bin/nodenv global {{ node_version }}
+  when: is_node_version is failed
+
+- name: Install global npm modules
+  npm:
+    name: '{{ item.name }}'
+    global: yes
+  with_items: '{{ npm_modules }}'

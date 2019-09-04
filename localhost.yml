@@ -6,5 +6,6 @@
     - { role: package, tags: [ package ] }
     - { role: osx, tags: [ osx ] }
     - { role: rbenv, tags: [ rbenv ] }
+    - { role: nodenv, tags: [ nodenv ] }
     - { role: dotfiles, tags: [ dotfiles ] }
     - { role: karabiner, tags: [ karabiner ] }
