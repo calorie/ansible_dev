@@ -13,6 +13,7 @@ default_gems:
   - { name: rubocop }
   - { name: rubygems-update }
   - { name: tmuxinator }
+  - { name: solargraph }
 nokogiri_deps:
   - { name: libiconv }
   - { name: libxml2 }

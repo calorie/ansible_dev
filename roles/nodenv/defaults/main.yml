@@ -2,3 +2,5 @@
 node_version: 10.16.3
 npm_modules:
   - { name: grunt-cli }
+  - { name: typescript-language-server }
+  - { name: yaml-language-server }
