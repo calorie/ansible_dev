@@ -5,6 +5,7 @@ rbenv_packages:
 ruby_version: '2.6.4'
 default_gems:
   - { name: bundler }
+  - { name: neovim }
   - { name: nvvm }
   - { name: pry-byebug }
   - { name: rake }
