@@ -2,7 +2,7 @@
 rbenv_packages:
   - { name: rbenv }
   - { name: ruby-build }
-ruby_version: '2.6.4'
+ruby_version: '2.7.1'
 default_gems:
   - { name: bundler }
   - { name: neovim }
@@ -13,8 +13,8 @@ default_gems:
   - { name: refe2 }
   - { name: rubocop }
   - { name: rubygems-update }
-  - { name: tmuxinator }
   - { name: solargraph }
+  - { name: tmuxinator }
 nokogiri_deps:
   - { name: libiconv }
   - { name: libxml2 }

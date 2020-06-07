@@ -8,10 +8,10 @@ homebrew_packages:
   - { name: automake }
   - { name: boost-python }
   - { name: cmake }
+  - { name: cpanminus }
   - { name: ctags }
   - { name: direnv }
   - { name: docker }
-  - { name: docker-machine }
   - { name: fontforge }
   - { name: fzf }
   - { name: go }
@@ -24,11 +24,8 @@ homebrew_packages:
   - { name: lua }
   - { name: luajit }
   - { name: mas }
-  - { name: memcached }
-  - { name: mercurial }
   - { name: mysql }
   - { name: neovim }
-  - { name: nginx }
   - { name: nkf }
   - { name: openssl }
   - { name: peco }
@@ -53,10 +50,10 @@ homebrew_cask_packages:
   - { name: alfred }
   - { name: appcleaner }
   - { name: caffeine }
+  - { name: docker }
   - { name: dropbox }
   - { name: evernote }
   - { name: firefox }
-  - { name: flux }
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
@@ -64,8 +61,6 @@ homebrew_cask_packages:
   - { name: keyboardcleantool }
   - { name: slack }
   - { name: the-unarchiver }
-  - { name: vagrant }
-  - { name: virtualbox }
   - { name: vlc }
   - { name: xquartz }
 

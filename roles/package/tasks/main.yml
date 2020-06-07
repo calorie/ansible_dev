@@ -44,3 +44,6 @@
 - name: Don't Allow apps to be downloaded from anywhere
   shell: spctl --master-enable
   become: yes
+
+- cpanm:
+  name: Neovim::Ext

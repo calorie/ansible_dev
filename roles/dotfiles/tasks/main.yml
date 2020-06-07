@@ -28,9 +28,6 @@
   when: is_zsh_default is failed
 
 - pip:
-    name: neovim
-
-- pip:
     name: pynvim
 
 - pip:
