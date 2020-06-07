@@ -56,6 +56,7 @@ homebrew_cask_packages:
   - { name: firefox }
   - { name: google-chrome }
   - { name: google-japanese-ime }
+  - { name: growlnotify }
   - { name: iterm2 }
   - { name: karabiner-elements }
   - { name: keyboardcleantool }
@@ -66,6 +67,7 @@ homebrew_cask_packages:
 
 mas_packages:
   - { name: 1Password, id: 443987910 }
+  - { name: Growl, id: 467939042 }
   - { name: Kindle, id: 405399194 }
   - { name: BetterSnapTool, id: 417375580 }
   - { name: Xcode, id: 497799835 }
