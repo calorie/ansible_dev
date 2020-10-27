@@ -36,6 +36,7 @@ homebrew_packages:
   - { name: reattach-to-user-namespace }
   - { name: ricty }
   - { name: rmtrash }
+  - { name: rust }
   - { name: ssh-copy-id }
   - { name: the_silver_searcher }
   - { name: tig }
