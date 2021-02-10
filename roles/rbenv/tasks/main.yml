@@ -33,12 +33,6 @@
   with_items: '{{ default_gems }}'
   when: is_ruby_version is failed
 
-- name: Set up refe2
-  shell: bitclust setup --versions={{ ruby_version }}
-  args:
-    creates: ~/.bitclust
-  when: is_ruby_version is failed
-
 - name: Install nokogiri deps
   homebrew:
     name: '{{ item.name }}'

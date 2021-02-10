@@ -3,5 +3,6 @@ node_version: 12.18.0
 npm_modules:
   - { name: grunt-cli }
   - { name: neovim }
+  - { name: typescript }
   - { name: typescript-language-server }
   - { name: yaml-language-server }

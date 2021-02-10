@@ -2,7 +2,7 @@
 rbenv_packages:
   - { name: rbenv }
   - { name: ruby-build }
-ruby_version: '2.7.1'
+ruby_version: '3.0.0'
 default_gems:
   - { name: bundler }
   - { name: neovim }
@@ -10,7 +10,6 @@ default_gems:
   - { name: pry-byebug }
   - { name: rake }
   - { name: reek }
-  - { name: refe2 }
   - { name: rubocop }
   - { name: rubygems-update }
   - { name: solargraph }
